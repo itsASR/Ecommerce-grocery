@@ -1,0 +1,611 @@
+[
+    {
+      "category": "Tops",
+      "image_url": "/public/tops.png",
+      "products": [
+        {
+          "name": "Casual T-Shirt",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Red", "Blue", "Green", "Black", "White"],
+          "sizes": ["S", "M", "L", "XL"],
+          "quantity": 50
+        },
+        {
+          "name": "Formal Blouse",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Pink", "Gray"],
+          "sizes": ["XS", "S", "M", "L", "XL"],
+          "quantity": 30
+        },
+        {
+          "name": "Striped Top",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Blue", "Red", "White", "Black"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Knit Sweater",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Gray", "Brown", "Beige", "Blue"],
+          "sizes": ["S", "M", "L", "XL"],
+          "quantity": 25
+        },
+        {
+          "name": "Tank Top",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Gray", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Crop Top",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Red", "Blue", "Green"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Button-Up Shirt",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["White", "Blue", "Pink", "Gray"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Long Sleeve Tee",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Gray"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Off-Shoulder Blouse",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["White", "Black", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Graphic Tee",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Gray"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        }
+      ]
+    },
+    {
+      "category": "Bottoms",
+      "image_url": "/public/bottom.png",
+      "products": [
+        {
+          "name": "Jeans",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Blue", "Black", "Gray"],
+          "sizes": ["S", "M", "L", "XL"],
+          "quantity": 40
+        },
+        {
+          "name": "Skirt",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 25
+        },
+        {
+          "name": "Leggings",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Navy", "Purple", "Red"],
+          "sizes": ["S", "M", "L", "XL"],
+          "quantity": 45
+        },
+        {
+          "name": "Culottes",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Beige"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Blue", "Black", "White", "Khaki"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Trousers",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Navy"],
+          "sizes": ["S", "M", "L", "XL"],
+          "quantity": 35
+        },
+        {
+          "name": "Cargo Pants",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Green", "Black", "Khaki"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Denim Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Blue", "Black"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Pencil Skirt",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Navy", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 25
+        },
+        {
+          "name": "Palazzo Pants",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Navy"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        }
+      ]
+    },
+    {
+      "category": "Dresses",
+      "image_url": "/public/dresses.png",
+      "products": [
+        {
+          "name": "Summer Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Blue", "Red", "Yellow", "Green", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 60
+        },
+        {
+          "name": "Evening Gown",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Red", "Blue", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 20
+        },
+        {
+          "name": "Maxi Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Pink", "White", "Yellow"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Wrap Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Red", "Green", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Bodycon Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Shift Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Midi Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Yellow"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Sundress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Blue", "Red", "Yellow", "Green", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Cocktail Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Red", "Blue", "Green"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 25
+        },
+        {
+          "name": "Bodycon Midi Dress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        }
+      ]
+    },
+    {
+      "category": "Activewear",
+      "image_url": "/public/activewear.png",
+      "products": [
+        {
+          "name": "Sports Bra",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Gray", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Running Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Gray", "Red"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 45
+        },
+        {
+          "name": "Yoga Pants",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Blue", "Purple"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Athletic Leggings",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Navy", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Tank Top",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Gray", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Compression Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Blue", "Red"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Sports Jacket",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 25
+        },
+        {
+          "name": "Hoodie",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Blue", "Red"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Running Tights",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Blue", "Purple"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Training Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Blue", "Red"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        }
+      ]
+    },
+    {
+      "category": "Swimwear",
+      "image_url": "/public/swimwear.png",
+      "products": [
+        {
+          "name": "Bikini Set",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Swimsuit",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 45
+        },
+        {
+          "name": "One-Piece",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Bikini Bottom",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 55
+        },
+        {
+          "name": "Bikini Top",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Swim Trunks",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 45
+        },
+        {
+          "name": "Rash Guard",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Board Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Cover-Up",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Swim Briefs",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Blue", "Red", "White"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        }
+      ]
+    },
+    {
+      "category": "Lingerie & Intimates",
+      "image_url": "/public/ling.png",
+      "products": [
+        {
+          "name": "Lace Bralette",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 60
+        },
+        {
+          "name": "Silk Robe",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Push-Up Bra",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Thong",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Briefs",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 60
+        },
+        {
+          "name": "Chemise",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 45
+        },
+        {
+          "name": "Bodysuit",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Babydoll",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Bustier",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Camisole",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        }
+      ]
+    },
+    {
+      "category": "Sleepwear",
+      "image_url": "/public/sleepwear.png",
+      "products": [
+        {
+          "name": "Pyjama Set",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Blue", "Pink", "Gray", "Green"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 55
+        },
+        {
+          "name": "Nightgown",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Pink", "Blue"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 45
+        },
+        {
+          "name": "Sleep Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Gray"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        },
+        {
+          "name": "Sleep Shirt",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Gray"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 60
+        },
+        {
+          "name": "Silk Pyjamas",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Red", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Robe",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 30
+        },
+        {
+          "name": "Nightdress",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 35
+        },
+        {
+          "name": "Slip",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 40
+        },
+        {
+          "name": "Night Shorts",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 45
+        },
+        {
+          "name": "Pyjama Bottom",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "White", "Blue", "Pink"],
+          "sizes": ["S", "M", "L"],
+          "quantity": 50
+        }
+      ]
+    },
+    {
+      "category": "Accessories",
+      "image_url": "/public/accesories.png",
+      "products": [
+        {
+          "name": "Statement Necklace",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Gold", "Silver", "Rose Gold", "Black"],
+          "sizes": ["One Size"],
+          "quantity": 30
+        },
+        {
+          "name": "Leather Handbag",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Brown", "Beige", "Red"],
+          "sizes": ["One Size"],
+          "quantity": 25
+        },
+        {
+          "name": "Sunglasses",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Brown", "Red", "Blue"],
+          "sizes": ["One Size"],
+          "quantity": 40
+        },
+        {
+          "name": "Watch",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Gold", "Silver", "Rose Gold", "Black"],
+          "sizes": ["One Size"],
+          "quantity": 35
+        },
+        {
+          "name": "Bracelet",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Gold", "Silver", "Rose Gold", "Black"],
+          "sizes": ["One Size"],
+          "quantity": 45
+        },
+        {
+          "name": "Scarf",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Gray", "Red", "Blue"],
+          "sizes": ["One Size"],
+          "quantity": 50
+        },
+        {
+          "name": "Earrings",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Gold", "Silver", "Rose Gold", "Black"],
+          "sizes": ["One Size"],
+          "quantity": 55
+        },
+        {
+          "name": "Belt",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Brown", "Beige", "Red"],
+          "sizes": ["One Size"],
+          "quantity": 40
+        },
+        {
+          "name": "Hat",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Brown", "Beige", "Red"],
+          "sizes": ["One Size"],
+          "quantity": 30
+        },
+        {
+          "name": "Clutch",
+          "image_url": "https://via.placeholder.com/150",
+          "colors": ["Black", "Brown", "Beige", "Red"],
+          "sizes": ["One Size"],
+          "quantity": 35
+        }
+      ]
+    }
+  ]
+  

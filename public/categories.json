@@ -1,0 +1,95 @@
+{
+    "categories": [
+      {
+        "name": "Grains",
+        "category_image_url": "public/Product images/Grains.jpg",
+        "products": [
+          {
+            "id": 1,
+            "name": "Rice",
+            "price": 50,
+            "image_url": "public/Product images/rice.webp"
+          },
+          {
+            "id": 2,
+            "name": "Basmati Rice",
+            "price": 80,
+            "image_url": "public/Product images/basmati rice.webp"
+          }
+        ]
+      },
+      {
+        "name": "Pulses",
+        "category_image_url": "public/Product images/Pulses.png",
+        "products": [
+          {
+            "id": 21,
+            "name": "Lentils",
+            "price": 70,
+            "image_url": "public/Product images/Lentils.webp"
+          },
+          {
+            "id": 22,
+            "name": "Chickpeas",
+            "price": 60,
+            "image_url": "public/Product images/Chickpeas.webp"
+          }
+        ]
+      },
+      {
+        "name": "Cooking Oil",
+        "category_image_url": "public/Product images/Cooking Oil.png",
+        "products": [
+          {
+            "id": 31,
+            "name": "Mustard Oil",
+            "price": 130,
+            "image_url": "public/Product images/Mustard Oil.webp"
+          },
+          {
+            "id": 32,
+            "name": "Sunflower Oil",
+            "price": 150,
+            "image_url": "public/Product images/Sunflower Oil.webp"
+          }
+        ]
+      },
+      {
+        "name": "Flour",
+        "category_image_url": "public/Product images/Flour.png",
+        "products": [
+          {
+            "id": 41,
+            "name": "Wheat Flour",
+            "price": 40,
+            "image_url": "public/Product images/Flour.webp"
+          },
+          {
+            "id": 42,
+            "name": "Ragi Flour",
+            "price": 45,
+            "image_url": "public/Product images/Ragi Flour.webp"
+          }
+        ]
+      },
+      {
+        "name": "Spices",
+        "category_image_url": "public/Product images/Spices.png",
+        "products": [
+          {
+            "id": 51,
+            "name": "Turmeric Powder",
+            "price": 20,
+            "image_url": "public/Product images/Turmeric Powder.webp"
+          },
+          {
+            "id": 52,
+            "name": "Cumin Powder",
+            "price": 25,
+            "image_url": "public/Product images/Cumin Powder.webp"
+          }
+        ]
+      }
+    ]
+  }
+  
