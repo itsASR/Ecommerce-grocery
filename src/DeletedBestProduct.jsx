@@ -2,12 +2,11 @@ import React, { useContext, useState } from 'react';
 import { FaCircle } from "react-icons/fa";
 import { IoHeartCircleOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
-import { Apis } from '../App';
+import { Apis } from './App';
 
-
-function LatestArrival() {
+function BestSeller() {
     const { categories } = useContext(Apis);
-    
+    const [bestSellerPro, setBestSellerPro] = useState([]);
 
     const filteredProducts = categories.flatMap(category => (
         category.products.filter(product => product.promoted === true)
@@ -45,4 +44,4 @@ function LatestArrival() {
     )
 }
 
-export default LatestArrival;
+export default BestSeller;

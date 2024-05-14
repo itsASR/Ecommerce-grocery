@@ -8,6 +8,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import LoginMenu from '../Mega Menu/LoginMenu';
 import ThreeDotMenu from '../Mega Menu/ThreeDotMenu';
 import ProductsSubMenu from '../Mega Menu/ProductsSubMenu';
+import SearchPromotion from '../Mega Menu/SearchPromotion';
 
 function MainHeader() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -30,26 +31,29 @@ function MainHeader() {
 
     return (
         <>
-            <header className={`flex justify-between items-center px-10 py-5 fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow' : ''}`}>
+            <header className={`flex justify-between items-center px-10 py-5 fixed w-full z-[500]  ${isScrolled ? 'bg-white shadow' : ''}`}>
                 {/* Logo and Navigation */}
                 <div className="flex items-center">
                     <Link to='/'><img src={logo} alt="Borobazar" className="mr-2" /></Link>
                     <Link to='/grocery'><span className="px-4 py-2 bg-green-200 font-semibold rounded-xl mx-10">Grocery</span></Link>
-                    <div className="flex justify-center items-center bg-white rounded-full w-[600px] shadow ">
-                        <input
-                            type="text"
-                            placeholder="Search Products here..."
-                            className="px-4 py-2 w-3/4 h-12 rounded-full focus:outline-none text-gray-700 font-semibold"
-                        />
-                        <button className="focus:outline-none">
-                            <IoSearchSharp className="text-xl text-gray-600" />
-                        </button>
+                    <div className="relative">
+                        <div className="flex justify-center items-center bg-white rounded-full w-[600px] shadow ">
+                            <input
+                                type="text"
+                                placeholder="Search Products here..."
+                                className="px-4 py-2 w-3/4 h-12 rounded-full focus:outline-none text-gray-700 font-semibold"
+                            />
+                            <button className="focus:outline-none">
+                                <IoSearchSharp className="text-xl text-gray-600" />
+                            </button>
+                            <div className="absolute -top-4  -right-[400px] -z-10 hidden"><SearchPromotion></SearchPromotion></div>
+                        </div>
                     </div>
 
                     <div className="flex items-center">
                         <ul className="hidden lg:flex">
                             <li className="px-4 font-semibold relative categories-main ml-10 product-menu"><Link to='/ecommerceproducts'><span>Products</span></Link>
-                                <div className='absolute -right-10 product-sub-menu'>
+                                <div className='absolute -right-40 product-sub-menu '>
                                     <ProductsSubMenu></ProductsSubMenu>
                                 </div></li>
                         </ul>

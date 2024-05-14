@@ -17,40 +17,36 @@ import ForgetPassword from './Auth pages/ForgetPassword';
 import Reset from './Auth pages/Reset';
 import UserProfile from './Back Layout/Extra Components/UserProfile';
 import EcommerceProductpage from './Main Ecommerce/EcommerceProductpage';
+import DeletedBestProduct from './DeletedBestProduct';
 
 
 export const Apis = createContext()
 
 function App() {
 
-  const [products, useProducts] = useState([])
-  const [ecommerceProducts , setecommerceProducts] = useState([])
+  const [categories, setCategories] = useState([]);
 
 
 
 
   useEffect(() => {
-    const datas = async () => {
-      try {
-        const res = await axios.get("/public/Ecommerce API/ecommercecontentapi.json")
-
-        {
-          setecommerceProducts(res.data)
-
+    const fetchCategories = async () => {
+        try {
+            const res = await axios.get('/public/Ecommerce API/EcomProducts.json');
+            setCategories(res.data);
+        } catch (err) {
+            console.log("Error in fetching categories:", err);
         }
+    };
 
-      } catch (error) {
-        console.log("this is error abhishek here at App.jsx axios ", error);
-      }
+    fetchCategories();
+}, []);
 
-    }
-    datas()
-  }, [])
 
 
   return (
     <>
-      <Apis.Provider value={{ products, useProducts , ecommerceProducts , setecommerceProducts}}>
+      <Apis.Provider value={{ categories, setCategories}}>
       <PrimeReactProvider  >
         <BrowserRouter>
         {/* {<Register></Register>  && <Header />} */}
@@ -66,6 +62,8 @@ function App() {
             {/* <Route path='/password' element={<ForgetPassword></ForgetPassword>}></Route> */}
             {/* <Route path='/reset' element={<Reset></Reset>}></Route> */}
             <Route path='/user' element={<UserProfile></UserProfile>}></Route>
+            <Route path='/deleted' element={<DeletedBestProduct></DeletedBestProduct>}></Route>
+            
             <Route path='/ecommerceproducts' element={<EcommerceProductpage></EcommerceProductpage>}></Route>
             
             

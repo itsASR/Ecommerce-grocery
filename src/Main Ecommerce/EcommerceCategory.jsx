@@ -10,14 +10,14 @@ import { Apis } from '../App';
 
 
 function EcommerceCategory() {
-    const { ecommerceProducts } = useContext(Apis);
+    const { categories } = useContext(Apis);
 
-    useEffect(()=>{
+    // useEffect(()=>{
       
-        ecommerceProducts.map((data)=>{
-            return console.log(data);
-        })
-    })
+    //     categories.map((data)=>{
+    //         return console.log(data);
+    //     })
+    // })
 
 
     function SamplePrevArrow(props) {
@@ -49,20 +49,12 @@ function EcommerceCategory() {
             <div className='container mx-auto flex justify-between pt-10'>
                 <div className='w-[60vw] bg-gradient-to-b from-white to-purple-200 rounded-xl border border-gray-400 grid grid-cols-3 gap-4 p-4 mb-10 '>
                    {
-                    ecommerceProducts.map((data)=>{
-                        return <CategoryItem image={data.image_url} text={data.category} />
+                    categories.map((category)=>{
+                        return <CategoryItem image= {category.category.image_url} text={category.category.name} />
                     })
                    }
                          
-                    {/* // <CategoryItem image={tops} text="Tops" />
-                    // <CategoryItem image={bottom} text="Bottoms" />
-                    // <CategoryItem image={dresses} text="Dresses" />
-                    // <CategoryItem image={activewear} text="Activewear" />
-                    // <CategoryItem image={swimwaer} text="Swimwear" />
-                    // <CategoryItem image={ling} text="Lingerie & Intimates" />
-                    // <CategoryItem image={sleepwear} text="Sleepwear" />
-                    // <CategoryItem image={accesories} text="Accessories" />
-                    // <CategoryItem image={shoes} text="Shoes" /> */}
+                    
                 </div>
 
                 <div className='w-[33vw] h-[400px] overflow-hidden bg-white rounded-xl border border-gray-400 mb-10'>
