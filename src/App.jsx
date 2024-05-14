@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const fetchCategories = async () => {
         try {
-            const res = await axios.get('/public/Ecommerce API/EcomProducts.json');
+            const res = await axios.get('/Ecommerce API/EcomProducts.json');
             setCategories(res.data);
         } catch (err) {
             console.log("Error in fetching categories:", err);
