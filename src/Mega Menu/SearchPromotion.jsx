@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { IoClose } from "react-icons/io5";
+import { Apis } from '../App';
+
 
 function SearchPromotion() {
+    const {SearchBox , setSearchBox} = useContext(Apis)
     return (
         <>
             <div className='py-20 bg-white w-screen overflow-scroll'>
+            <IoClose className='absolute right-10 text-3xl bg-gray-400 text-white hover:bg-black rounded-full' onClick={()=> setSearchBox("none")} />
                 <div className=' flex justify-center items-center'>
                     <div className='w-[400px] h-[500px]  text-center'>
                         <h1 className='text-2xl pt-10 border-b-2 border-gray-300 mx-20 pb-4'>Mens</h1>

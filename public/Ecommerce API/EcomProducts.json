@@ -2,7 +2,7 @@
     {
         "category": {
             "name": "Tops",
-            "image_url": "/public/tops.png",
+            "image_url": "/tops.png",
             "gender": "Women"
         },
         "products": [
@@ -147,7 +147,7 @@
     {
         "category": {
             "name": "Bottoms",
-            "image_url": "/public/bottom.png",
+            "image_url": "/bottom.png",
             "gender": "Men"
         },
         "products": [
@@ -583,7 +583,7 @@
     {
         "category": {
             "name": "Dresses",
-            "image_url": "/public/dresses.png",
+            "image_url": "/dresses.png",
             "gender": "Women"
         },
         "products": [

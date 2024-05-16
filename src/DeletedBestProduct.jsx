@@ -1,47 +1,48 @@
-import React, { useContext, useState } from 'react';
-import { FaCircle } from "react-icons/fa";
-import { IoHeartCircleOutline } from "react-icons/io5";
-import { IoBagOutline } from "react-icons/io5";
-import { Apis } from './App';
+import React from 'react';
 
-function BestSeller() {
-    const { categories } = useContext(Apis);
-    const [bestSellerPro, setBestSellerPro] = useState([]);
-
-    const filteredProducts = categories.flatMap(category => (
-        category.products.filter(product => product.promoted === true)
-    ));
-
+function DeletedBestProduct() {
     return (
         <>
             <div className='text-center py-20'>
-                <p className='text-5xl pb-2'>New Arrival</p>
-                <p>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
+                <p className='text-5xl pb-2'>Fashion!</p>
+                <p>Discover the Latest Trends in Men's, Women's, and Kid's</p>
             </div>
-            <div className='grid grid-cols-4 gap-x-4 pl-7 gap-y-10 pb-12'>
-                {filteredProducts.map((product, index) => (
-                    <div className="product-Div" key={index}>
-                        <div className="card h-[350px] relative overflow-hidden">
-                            <img src={product.image_url} className='h-full' alt={product.title} />
-                          
-                        </div>
-                        <div>
-                            <p className='pt-2'>{product.title}</p>
-                            <p>Rs {product.regular_price}</p>
-                            <div className="color-variant flex [&>*]:mr-2 pt-1">
-                                {product.colors.map((color, idx) => (
-                                    <FaCircle className='border-[1px] border-black rounded-full' style={{ color: color }} key={idx} />
-                                ))}
-                            </div>
-                        </div>
+
+
+            <div className='container mx-auto flex justify-between pt-10'>
+                <div className='relative w-[33%] h-[500px] bg-purple-500'>
+                    <img
+                        src='https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/cdn-cgi/image/h=600,w=444,q=85,fit=cover/lifestyle/1000012951045-Blue-Navy-1000012951045_01-2100.jpg'
+                        className='object-cover w-full h-full'
+                        alt='Product 1'
+                    />
+                    <div className='absolute inset-0 flex justify-center items-center text-white opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-40'>
+                        <span className="text-lg">For Men</span>
                     </div>
-                ))}
-            </div>
-            <div className='text-center'>
-                <button className='border-2 w-40 py-2 border-black hover:text-red-300 hover:border-red-300'>Load More</button>
+                </div>
+                <div className='relative w-[33%] h-[500px] bg-green-500'>
+                    <img
+                        src='https://img101.urbanic.com/v1/e09cee2fd2494100b7eb844fc0077d2b.webp'
+                        className='object-cover w-full h-full'
+                        alt='Product 2'
+                    />
+                    <div className='absolute inset-0 flex justify-center items-center text-white opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-40'>
+                        <span className="text-lg">For Women</span>
+                    </div>
+                </div>
+                <div className='relative w-[33%] h-[500px] bg-blue-500'>
+                    <img
+                        src='https://static.hopscotch.in/fstatic/product/202405/192fc199-58ee-43d5-827b-8211482c53da_full.jpg?version=1715597938143&tr=w-480,c-at_max,n-normal'
+                        className='object-cover w-full h-full'
+                        alt='Product 3'
+                    />
+                    <div className='absolute inset-0 flex justify-center items-center text-white opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-40'>
+                        <span className="text-lg">For Kids</span>
+                    </div>
+                </div>
             </div>
         </>
-    )
+    );
 }
 
-export default BestSeller;
+export default DeletedBestProduct;

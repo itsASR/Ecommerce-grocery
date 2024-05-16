@@ -18,6 +18,7 @@ import Reset from './Auth pages/Reset';
 import UserProfile from './Back Layout/Extra Components/UserProfile';
 import EcommerceProductpage from './Main Ecommerce/EcommerceProductpage';
 import DeletedBestProduct from './DeletedBestProduct';
+import SearchResult from './Back Layout/Extra Components/SearchResult';
 
 
 export const Apis = createContext()
@@ -25,6 +26,8 @@ export const Apis = createContext()
 function App() {
 
   const [categories, setCategories] = useState([]);
+  const [SearchBox , setSearchBox ] = useState("none")
+  const [ SearchResultData , setSearchResultData] = useState("")
 
 
 
@@ -46,7 +49,7 @@ function App() {
 
   return (
     <>
-      <Apis.Provider value={{ categories, setCategories}}>
+      <Apis.Provider value={{ categories, setCategories , SearchBox , setSearchBox ,SearchResultData , setSearchResultData}}>
       <PrimeReactProvider  >
         <BrowserRouter>
         {/* {<Register></Register>  && <Header />} */}
@@ -63,6 +66,7 @@ function App() {
             {/* <Route path='/reset' element={<Reset></Reset>}></Route> */}
             <Route path='/user' element={<UserProfile></UserProfile>}></Route>
             <Route path='/deleted' element={<DeletedBestProduct></DeletedBestProduct>}></Route>
+            <Route path='/search' element={<SearchResult></SearchResult>}></Route>
             
             <Route path='/ecommerceproducts' element={<EcommerceProductpage></EcommerceProductpage>}></Route>
             

@@ -38,7 +38,7 @@ function Footwear() {
     return (
 
         <>
-        <h1 className="text-6xl text-center pt-14">Footwears</h1>
+        <h1 className="text-6xl text-center pt-20">Footwears</h1>
             <div className="slider-container pt-10">
                 <Slider {...settings}>
                     <div>

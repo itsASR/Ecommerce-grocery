@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
 import logo from '/logo.svg';
 import { IoSearchSharp } from 'react-icons/io5';
@@ -9,9 +9,32 @@ import LoginMenu from '../Mega Menu/LoginMenu';
 import ThreeDotMenu from '../Mega Menu/ThreeDotMenu';
 import ProductsSubMenu from '../Mega Menu/ProductsSubMenu';
 import SearchPromotion from '../Mega Menu/SearchPromotion';
+import { Apis } from '../App';
 
 function MainHeader() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const { SearchBox, setSearchBox, SearchResultData, setSearchResultData, categories } = useContext(Apis);
+    const [Abhishek, setAbhishek] = useState([])
+
+
+
+
+    useEffect(() => {
+        const filteredProducts = categories.map((result) => {
+            return result.products.filter(product => product.name && product.name.includes('pants'));
+        });
+
+
+        const filteredAbhishek = filteredProducts.flat();
+
+        setAbhishek(filteredAbhishek);
+
+
+        console.log("Filtered Abhishek:", filteredAbhishek);
+    }, [categories]);
+
+
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,6 +56,7 @@ function MainHeader() {
         <>
             <header className={`flex justify-between items-center px-10 py-5 fixed w-full z-[500]  ${isScrolled ? 'bg-white shadow' : ''}`}>
                 {/* Logo and Navigation */}
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, perferendis!</p>
                 <div className="flex items-center">
                     <Link to='/'><img src={logo} alt="Borobazar" className="mr-2" /></Link>
                     <Link to='/grocery'><span className="px-4 py-2 bg-green-200 font-semibold rounded-xl mx-10">Grocery</span></Link>
@@ -42,11 +66,13 @@ function MainHeader() {
                                 type="text"
                                 placeholder="Search Products here..."
                                 className="px-4 py-2 w-3/4 h-12 rounded-full focus:outline-none text-gray-700 font-semibold"
+                                onClick={() => setSearchBox("block")}
+                                onChange={(e) => { setSearchResultData(e.target.value) }}
                             />
                             <button className="focus:outline-none">
-                                <IoSearchSharp className="text-xl text-gray-600" />
+                                <Link to='/search'><IoSearchSharp className="text-xl text-gray-600" /></Link>
                             </button>
-                            <div className="absolute -top-4  -right-[400px] -z-10 hidden"><SearchPromotion></SearchPromotion></div>
+                            <div className="absolute -top-5  -right-[400px] -z-10 " style={{ display: SearchBox }}><SearchPromotion></SearchPromotion></div>
                         </div>
                     </div>
 

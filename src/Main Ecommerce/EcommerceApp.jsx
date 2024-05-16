@@ -7,6 +7,7 @@ import EcommerceFooter from './EcommerceFooter'
 import LatestArrival from './LatestArrival'
 import Footwear from './Footwear'
 import OfferStrip from '../Mega Menu/OfferStrip'
+import Top3Ecommercecategory from './Top3Ecommercecategory'
 
 
 function EcommerceApp() {
@@ -20,6 +21,7 @@ function EcommerceApp() {
     <EcommerceCategory></EcommerceCategory>
     <BestSeller></BestSeller>
     <LatestArrival></LatestArrival>
+    <Top3Ecommercecategory></Top3Ecommercecategory>
     <Footwear></Footwear>
     <EcommerceFooter></EcommerceFooter>
     </>
