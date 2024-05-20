@@ -29,7 +29,8 @@ function EcommerceApp() {
     <Mobilebanner></Mobilebanner>
     <PrdoctsForMobile></PrdoctsForMobile>
     <EcommerceFooter></EcommerceFooter>
-    <div className='fixed bottom-0 z-[1000]'>
+    <div className='h-12 md:hidden'></div>
+    <div className='fixed -bottom-0  z-[1000] '>
       <MobileLowerMenu></MobileLowerMenu>
     </div>
     </>

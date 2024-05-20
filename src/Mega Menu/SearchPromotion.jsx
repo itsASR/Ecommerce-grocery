@@ -10,15 +10,15 @@ function SearchPromotion() {
         <>
             <div className='py-20 bg-white w-screen' style={{ display: SearchResultQuery.length > 0 ? "block" : "none" }}>
                 <div className='absolute w-screen mx-auto flex justify-center' style={{ display: SearchResultQuery.length > 1 ? "flex" : "none" }}>
-                    <div className="w-full max-w-md p-4 bg-white pt-20 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-red-100 dark:border-gray-700">
+                    <div className="w-full max-w-md p-4 bg-white pt-20 border border-gray-200 rounded-lg shadow sm:p-8 ">
                         <div className="flex items-center justify-between mb-4">
-                            <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white ">{SearchResultQuery}</h5>
-                            <Link to={`/search?name=${SearchResultQuery}`}><span className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                            <h5 className="text-xl font-bold leading-none text-gray-900  ">{SearchResultQuery}</h5>
+                            <Link to={`/search?name=${SearchResultQuery}`}><span className="text-sm font-medium text-blue-600 hover:underline ">
                                 View all
                             </span></Link>
                         </div>
                         <div className="flow-root">
-                            <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+                            <ul role="list" className="divide-y divide-gray-200 ">
                                 {SearchResultdata.map((products) => (
                                     <li key={products.id} className="py-3 sm:py-4">
                                         <div className="flex items-center">
@@ -26,7 +26,7 @@ function SearchPromotion() {
                                                 <img className="w-8 h-8 rounded-full" src={products.image_url} alt="Neil image" />
                                             </div>
                                             <div className="flex-1 min-w-0 ms-4">
-                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                                <p className="text-sm font-medium text-gray-900 truncate ">
                                                     {products.title}
                                                 </p>
 
