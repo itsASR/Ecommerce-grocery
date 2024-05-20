@@ -10,28 +10,31 @@ import ThreeDotMenu from '../Mega Menu/ThreeDotMenu';
 import ProductsSubMenu from '../Mega Menu/ProductsSubMenu';
 import SearchPromotion from '../Mega Menu/SearchPromotion';
 import { Apis } from '../App';
+import { MdAccountCircle } from "react-icons/md";
 
 function MainHeader() {
     const [isScrolled, setIsScrolled] = useState(false);
-    const { SearchBox, setSearchBox, SearchResultData, setSearchResultData, categories } = useContext(Apis);
-    const [Abhishek, setAbhishek] = useState([])
+    const { SearchBox, setSearchBox,  SearchResultQuery , setSearchResultQuery , categories, SearchResultdata , setSearchResultdata } = useContext(Apis);
+    
 
 
 
 
     useEffect(() => {
         const filteredProducts = categories.map((result) => {
-            return result.products.filter(product => product.name && product.name.includes('pants'));
+            return result.products.filter(product => product.name && product.name.toLowerCase().includes(SearchResultQuery.toLowerCase()));
         });
 
 
-        const filteredAbhishek = filteredProducts.flat();
+        const filtereddata = filteredProducts.flat();
+        setSearchResultdata(filtereddata)
+      
 
-        setAbhishek(filteredAbhishek);
 
-
-        console.log("Filtered Abhishek:", filteredAbhishek);
-    }, [categories]);
+        console.log("Filtered Abhishek:", filtereddata);
+        
+        
+    }, [SearchResultQuery]);
 
 
 
@@ -54,25 +57,23 @@ function MainHeader() {
 
     return (
         <>
-            <header className={`flex justify-between items-center px-10 py-5 fixed w-full z-[500]  ${isScrolled ? 'bg-white shadow' : ''}`}>
-                {/* Logo and Navigation */}
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, perferendis!</p>
+            <header className={`md:flex hidden w-screen  justify-between items-center px-10 py-5 fixed z-[500]  ${isScrolled ? 'bg-white shadow' : ''}`}>
                 <div className="flex items-center">
                     <Link to='/'><img src={logo} alt="Borobazar" className="mr-2" /></Link>
-                    <Link to='/grocery'><span className="px-4 py-2 bg-green-200 font-semibold rounded-xl mx-10">Grocery</span></Link>
-                    <div className="relative">
-                        <div className="flex justify-center items-center bg-white rounded-full w-[600px] shadow ">
+                    <Link to='/grocery'><span className="px-4 py-2  font-semibold rounded-xl mx-10 bg-green-500 text-white ">Grocery</span></Link>
+                    <div className="w-[600px] ">
+                        <div className="flex justify-center items-center bg-white rounded-full shadow ">
                             <input
                                 type="text"
                                 placeholder="Search Products here..."
                                 className="px-4 py-2 w-3/4 h-12 rounded-full focus:outline-none text-gray-700 font-semibold"
                                 onClick={() => setSearchBox("block")}
-                                onChange={(e) => { setSearchResultData(e.target.value) }}
+                                onChange={(e) => { setSearchResultQuery(e.target.value) }}
                             />
                             <button className="focus:outline-none">
-                                <Link to='/search'><IoSearchSharp className="text-xl text-gray-600" /></Link>
+                                <Link to={`/search?name=${SearchResultQuery}`}><IoSearchSharp className="text-xl text-gray-600" /></Link>
                             </button>
-                            <div className="absolute -top-5  -right-[400px] -z-10 " style={{ display: SearchBox }}><SearchPromotion></SearchPromotion></div>
+                            <div className="absolute -top-5  -right-[0px] -z-10 " ><SearchPromotion></SearchPromotion></div>
                         </div>
                     </div>
 
@@ -100,6 +101,25 @@ function MainHeader() {
                 </div>
 
             </header>
+            <div className={`md:hidden w-screen   z-[500] `} style={{position:SearchResultQuery.length > 0 ? "fixed" : "static" }}>
+            <div className="flex justify-between items-center px-4 pt-2">
+            <Link to='/'><img src={logo} alt="Company Logo" className="h-8" /></Link>
+                <MdAccountCircle className="text-5xl text-gray-700" />
+            </div>
+            <div className="mt-4 flex justify-center pb-2">
+                <input
+                    type="text"
+                    placeholder="Search Products here..."
+                    className="px-4 py-2 w-3/4 h-12 rounded-l-xl focus:outline-none text-gray-700 font-semibold bg-gray-200"
+                    onClick={() => setSearchBox("block")}
+                    onChange={(e) => { setSearchResultQuery(e.target.value) }}
+               />
+                <button className="px-4 h-12 bg-gray-200 rounded-r-xl focus:outline-none">
+                <Link to={`/search?name=${SearchResultQuery}`}><IoSearchSharp className="text-3xl text-gray-700" /></Link>
+                </button>
+                <div className="absolute -top-5  -right-[0px] -z-10 " ><SearchPromotion></SearchPromotion></div>
+            </div>
+        </div>
         </>
     )
 }

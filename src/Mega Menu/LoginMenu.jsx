@@ -18,8 +18,8 @@ function LoginMenu() {
                         <Link to='/register'><p>Sign Up</p></Link>
                     </div>
                     <div className='[&>p]:py-2'>
-                        <p className='flex items-center'><RiProfileLine  className='mr-2'/>Profile</p>
-                        <p className='flex items-center'><FiBox  className='mr-2'/>My Orders</p>
+                        <Link to='/user'><p className='flex items-center'><RiProfileLine  className='mr-2'/>Profile</p></Link>
+                        <Link to='/orders'><p className='flex items-center'><FiBox  className='mr-2'/>My Orders</p></Link>
                         <p className='flex items-center'><BiSolidOffer className='mr-2' />Offers</p>
 
                     </div>

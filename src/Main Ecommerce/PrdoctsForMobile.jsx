@@ -1,24 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Apis } from '../App';
 
-function BestSeller() {
+function ProductsForMobile() {
     const { categories } = useContext(Apis);
+    const [products, setProducts] = useState([]);
 
-    const filteredProducts = categories.flatMap(category => (
-        category.products.filter(product => product.top_selling === true)
-    ));
+    useEffect(() => {
+        const allProducts = categories.flatMap(category => category.products);
+        setProducts(allProducts);
+    }, [categories]);
+
+    console.log("filteredProducts", products);
 
     return (
         <>
+            <div className='md:hidden'>
             <div className='text-center md:py-20 py-10'>
-                <p className='md:text-5xl pb-2  pl-5 md:pl-0'>BEST SELLER</p>
+                <p className='md:text-5xl pb-2 pl-5 md:pl-0'>Our Collection</p>
                 <div className='border-b mx-16 border-black md:hidden'></div>
-                <p className='hidden md:block'>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
+                
             </div>
-
-            <div className='md:grid flex overflow-scroll md:overflow-hidden md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 pb-12'>
-                {filteredProducts.map(product => (
-                    <div key={product.id} className="product-Div">
+            <div className='grid overflow-hidden grid-cols-2 sm:grid-cols-3  md:grid-cols-3 lg:grid-cols-4  gap-4 pb-12'>
+                {products.map(product => (
+                    <div key={product.id} className="product-div mx-auto">
                         <div className="card md:h-[350px] h-40 w-40 md:w-full relative overflow-hidden rounded-lg">
                             <img src={product.image_url} className='h-full w-full rounded-lg bg-red-200 relative z-20 hover:z-0 object-cover' alt={product.title} />
                             <img src='https://img101.urbanic.com/v1/goods-pic/18a5a20039a64497ac6afb176e7c6b70UR_w1440_q90.webp' className='h-full w-full rounded-lg bg-red-200 absolute top-0 z-10 hover:z-30 object-cover' alt={product.title} />
@@ -46,13 +50,9 @@ function BestSeller() {
                     </div>
                 ))}
             </div>
-            <div className='text-center'>
-                <button className='hidden md:block text-center mx-auto border-2 w-40 py-2 border-black hover:text-red-300 hover:border-red-300'>
-                    Load More
-                </button>
             </div>
         </>
     );
 }
 
-export default BestSeller;
+export default ProductsForMobile;

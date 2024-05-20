@@ -1,67 +1,30 @@
-import React from 'react'
-import { AiFillThunderbolt } from "react-icons/ai";
-
+import React from 'react';
+import { AiFillThunderbolt } from 'react-icons/ai';
 
 function OfferStrip() {
-    return (
-        <>
-            <div className=' logos  '>
-                <div className=' h-20  offerstrip '>
-                    <div className='flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className='flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                </div>
+    const offers = [
+        'Summer Sale Offer Save Up to 70%',
+        'Summer Sale Offer Save Up to 70%',
+        'Summer Sale Offer Save Up to 70%',
+        'Summer Sale Offer Save Up to 70%',
+        'Summer Sale Offer Save Up to 70%',
+        'Summer Sale Offer Save Up to 70%',
+    ];
 
-                <div className=' h-20  offerstrip'>
-                    <div className='flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className='flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
-                    <div className=' flex  items-center  text-2xl font-semibold px-5'>
-                        <AiFillThunderbolt />
-                        <p className='pl-2'>Summer Sale Offer Save Up to 70%</p>
-                    </div>
+    return (
+        <div className='logos md:flex hidden'>
+            {Array(2).fill().map((_, index) => (
+                <div key={index} className='h-20 offerstrip'>
+                    {offers.map((offer, i) => (
+                        <div key={i} className='flex items-center text-2xl font-semibold px-5'>
+                            <AiFillThunderbolt />
+                            <p className='pl-2'>{offer}</p>
+                        </div>
+                    ))}
                 </div>
-            </div>
-        </>
-    )
+            ))}
+        </div>
+    );
 }
 
-export default OfferStrip
+export default OfferStrip;

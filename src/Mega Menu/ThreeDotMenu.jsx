@@ -2,6 +2,7 @@ import React from 'react'
 import { RiProfileLine } from "react-icons/ri";
 import { FiBox } from "react-icons/fi";
 import { BiSolidOffer } from "react-icons/bi";
+import { Link } from 'react-router-dom';
 
 
 function ThreeDotMenu() {
@@ -11,7 +12,7 @@ function ThreeDotMenu() {
 
                 <div className='[&>p]:py-2'>
                     <p className='flex items-center'><RiProfileLine className='mx-2' />Notifications</p>
-                    <p className='flex items-center'><FiBox className='mx-2' />Support</p>
+                    <Link to='/support'><p className='flex items-center'><FiBox className='mx-2' />Support</p></Link>
 
 
                 </div>

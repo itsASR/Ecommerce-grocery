@@ -19,6 +19,10 @@ import UserProfile from './Back Layout/Extra Components/UserProfile';
 import EcommerceProductpage from './Main Ecommerce/EcommerceProductpage';
 import DeletedBestProduct from './DeletedBestProduct';
 import SearchResult from './Back Layout/Extra Components/SearchResult';
+import Orders from './Orders';
+import Support from './Support';
+import FAQ from './FAQ';
+import ComplaintForm from './ComplaintForm';
 
 
 export const Apis = createContext()
@@ -27,7 +31,8 @@ function App() {
 
   const [categories, setCategories] = useState([]);
   const [SearchBox , setSearchBox ] = useState("none")
-  const [ SearchResultData , setSearchResultData] = useState("")
+  const [ SearchResultQuery , setSearchResultQuery] = useState("")
+  const [SearchResultdata , setSearchResultdata] = useState([])
 
 
 
@@ -49,7 +54,7 @@ function App() {
 
   return (
     <>
-      <Apis.Provider value={{ categories, setCategories , SearchBox , setSearchBox ,SearchResultData , setSearchResultData}}>
+      <Apis.Provider value={{ categories, setCategories , SearchBox , setSearchBox ,  SearchResultQuery , setSearchResultQuery , SearchResultdata , setSearchResultdata }}>
       <PrimeReactProvider  >
         <BrowserRouter>
         {/* {<Register></Register>  && <Header />} */}
@@ -61,12 +66,17 @@ function App() {
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/' element={<EcommerceApp></EcommerceApp>}></Route>
             <Route path='/product' element={<ProductDescription></ProductDescription>}></Route>
-            {/* <Route path='/otp' element={<OTPverification></OTPverification>}></Route> */}
-            {/* <Route path='/password' element={<ForgetPassword></ForgetPassword>}></Route> */}
-            {/* <Route path='/reset' element={<Reset></Reset>}></Route> */}
+            <Route path='/otp' element={<OTPverification></OTPverification>}></Route>
+            <Route path='/password' element={<ForgetPassword></ForgetPassword>}></Route>
+            <Route path='/reset' element={<Reset></Reset>}></Route>
             <Route path='/user' element={<UserProfile></UserProfile>}></Route>
             <Route path='/deleted' element={<DeletedBestProduct></DeletedBestProduct>}></Route>
             <Route path='/search' element={<SearchResult></SearchResult>}></Route>
+            <Route path='/orders' element={<Orders></Orders>}></Route>
+            <Route path='/support' element={<Support></Support>}></Route>
+            <Route path='/complaint' element={<ComplaintForm></ComplaintForm>}></Route>
+            
+            
             
             <Route path='/ecommerceproducts' element={<EcommerceProductpage></EcommerceProductpage>}></Route>
             

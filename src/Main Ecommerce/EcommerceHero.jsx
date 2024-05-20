@@ -63,19 +63,17 @@ function EcommerceHero() {
     <>
 
       <Slider {...settings} className="">
-        <div className="flex justify-center  w-screen h-screen  bg-cover bg-center  relative">
-          <img src="https://media.darveys.com/vss_mobileappbuilder/k/b/kbmobileapp_tc__1714741271.jpg" className="object-fill w-full h-full"></img>
+        <div className="flex justify-center  w-screen  md:h-screen h-40 ">
+          <img src="https://media.darveys.com/vss_mobileappbuilder/k/b/kbmobileapp_tc__1714741271.jpg" className="object-cover w-full h-full"></img>
         </div>
 
-        <div className="flex justify-center  w-screen h-screen bg-cover bg-center bg-gray-100 relative">
-          <img src='https://demo-ecomus-global.myshopify.com/cdn/shop/files/001fashion-slideshow-02.jpg?v=1696047230&width=3840' className=''></img>
-          <p className='absolute bottom-52 left-20 text-7xl font-medium w-80 font-serif '>SIMPLE MEET-UP</p>
-          <p className='absolute bottom-36 left-20  font-semibold w-80'>Expolre Simple & Sweet Collection</p>
-          <button className='absolute bottom-12 left-20 text-2xl font-semibold w-80 bg-black text-white px-5 py-2 '>Show Collection</button>
+        <div className="flex justify-center  w-screen  md:h-screen h-40  ">
+          <img src="https://cdn.shopaccino.com/qarot/slideshows/untitled-2-680217_l.jpg?v=513" className="object-cover w-full h-full"></img>
+        
         </div>
 
-        <div className="flex justify-center  w-screen h-screen bg-cover bg-center bg-gray-100 relative">
-          <img src='https://media.darveys.com/vss_mobileappbuilder/k/b/kbmobileapp_tc__1714633375.jpg' className=''></img>
+        <div className="flex justify-center  w-screen  md:h-screen h-40  ">
+          <img src='https://media.darveys.com/vss_mobileappbuilder/k/b/kbmobileapp_tc__1714633375.jpg' className='object-cover w-full h-full'></img>
         </div>
       </Slider>
 

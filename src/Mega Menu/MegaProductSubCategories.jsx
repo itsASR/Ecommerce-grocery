@@ -3,8 +3,8 @@ import React from 'react'
 function MegaProductSubCategories() {
     return (
         <>
-            <div className=' flex'>
-                <div className='bg-white w-full h-full mt-3 py-5 flex'>
+            <div className=' flex '>
+                <div className='bg-white w-full h-full mt-3 py-5 flex '>
                     <div className='px-5 text-sm'>
                         <h4 className='font-semibold'>Clothing</h4>
                         <ul>
@@ -89,8 +89,8 @@ function MegaProductSubCategories() {
 
 
                 </div>
-                <div className='pt-3'>
-                    <img src='https://skin.darveys.com/assets/images/menu/Clothing-Men.webp'></img>
+                <div className='mt-3 bg-white'>
+                    <img loading='lazy' src='https://skin.darveys.com/assets/images/menu/Clothing-Men.webp'></img>
                     <p className='text-gray-800 text-sm underline pt-2 hover:text-blue-500 cursor-pointer'>Shop Now</p>
                 </div>
 
