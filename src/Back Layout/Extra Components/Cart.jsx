@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiTrash2 } from 'react-icons/fi'; // Importing Trash icon from Feather Icons
+import MainHeader from '../../Main Ecommerce/MainHeader';
 
 function Cart() {
     const [cartItems, setCartItems] = useState([
@@ -34,18 +35,20 @@ function Cart() {
     };
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
-            <div className='flex justify-between'>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 w-[60vw]">
+        <>
+        <MainHeader></MainHeader>
+        <div className="container mx-auto px-4 py-8 md:pt-28">
+            <h1 className="text-2xl font-bold mb-4 text-center">Shopping Cart</h1>
+            <div className='flex flex-col lg:flex-row justify-between'>
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-4 w-full lg:w-[60vw]">
                     {cartItems.map(item => (
-                        <div key={item.id} className="border p-4 flex justify-between items-center">
-                            <img src='https://picsum.photos/id/237/200/300' alt={item.name} className="w-20 h-20 object-cover mr-4"></img>
-                            <div>
+                        <div key={item.id} className="border p-4 flex flex-col md:flex-row justify-between items-center">
+                            <img src='https://picsum.photos/id/237/200/300' alt={item.name} className="w-20 h-20 object-cover mr-4 mb-4 md:mb-0"></img>
+                            <div className="flex flex-col items-center md:items-start">
                                 <p className="text-lg font-semibold">{item.name}</p>
                                 <p className="text-gray-600">Rs {item.price}</p>
                             </div>
-                            <div className="flex items-center">
+                            <div className="flex items-center mt-4 md:mt-0">
                                 <input
                                     type="number"
                                     min="1"
@@ -53,14 +56,14 @@ function Cart() {
                                     onChange={(e) => updateItemCount(item.id, parseInt(e.target.value))}
                                     className="w-16 h-10 border rounded-md px-2"
                                 />
-                                <button onClick={() => removeItem(item.id)}>
+                                <button onClick={() => removeItem(item.id)} className="ml-2">
                                     <FiTrash2 className="text-red-500 cursor-pointer" />
                                 </button>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="mt-8 w-80 border border-gray-300 rounded-lg p-4">
+                <div className="mt-8 lg:mt-0 lg:ml-8 w-full lg:w-80 border border-gray-300 rounded-lg p-4">
                     <div className="mb-4">
                         <p className="text-lg font-semibold">Total Item Count:</p>
                         <p className="text-lg">{calculateTotalItemCount()}</p>
@@ -84,6 +87,8 @@ function Cart() {
                 </div>
             </div>
         </div>
+        
+        </>
     );
 }
 
