@@ -11,8 +11,8 @@ function UserProfile() {
             <div className='bg-white h-24 sticky top-0 z-10 w-screen'>
                 <MainHeader />
             </div>
-            <div className='flex'>
-                <div className='w-80 mx-5'>
+            <div className='flex flex-col lg:flex-row'>
+                <div className=' lg:w-80 mx-5'>
                     <div className='w-full h-10'></div>
                     <div className='mx-3 pt-5 px-2 bg-white text-center rounded-xl shadow-2xl [&>p]:pt-4 shadow-gray-200'>
                         <div className='w-40 h-40 rounded-full mx-auto overflow-hidden'>
@@ -36,33 +36,33 @@ function UserProfile() {
                     </div>
                 </div>
 
-                <div className='mx-3'>
+                <div className='mx-3  lg:w-auto'>
                     <div className='bg-white text-center rounded-xl shadow-inner mt-10 py-10 shadow-gray-200'>
                         <p className='text-4xl text-left pl-5 pb-10 font-light'>Personal Details</p>
-                        <form>
-                            <div className='border-b-[1px] border-gray-300 mx-8 flex justify-between pb-5 w-[600px] font-light items-center mb-8'>
-                                <label>Name</label>
-                                <input placeholder='Enter Name' className='w-96' value="Rohit Singh" />
+                        <form className='space-y-8'>
+                            <div className='border-b-[1px] border-gray-300 mx-8 flex flex-col md:flex-row justify-between pb-5 font-light items-center'>
+                                <label className='w-full md:w-auto text-left'>Name</label>
+                                <input placeholder='Enter Name' className='w-full md:w-96 mt-2 md:mt-0' value="Rohit Singh" />
                             </div>
-                            <div className='border-b-[1px] border-gray-300 mx-8 flex font-light justify-between pb-5 items-center mb-8'>
-                                <label>Email</label>
-                                <input placeholder='Enter Email' className='w-96' value="RohitSingh@gmail.com" />
+                            <div className='border-b-[1px] border-gray-300 mx-8 flex flex-col md:flex-row justify-between pb-5 font-light items-center'>
+                                <label className='w-full md:w-auto text-left'>Email</label>
+                                <input placeholder='Enter Email' className='w-full md:w-96 mt-2 md:mt-0' value="RohitSingh@gmail.com" />
                             </div>
-                            <div className='border-b-[1px] border-gray-300 mx-8 flex font-light justify-between pb-5 items-center mb-8'>
-                                <label>Phone</label>
-                                <input placeholder='Enter Phone' className='w-96' value="0987654321" />
+                            <div className='border-b-[1px] border-gray-300 mx-8 flex flex-col md:flex-row justify-between pb-5 font-light items-center'>
+                                <label className='w-full md:w-auto text-left'>Phone</label>
+                                <input placeholder='Enter Phone' className='w-full md:w-96 mt-2 md:mt-0' value="0987654321" />
                             </div>
-                            <div className='border-b-[1px] border-gray-300 mx-8 flex font-light justify-between pb-5 items-center mb-8'>
-                                <label>Address</label>
-                                <textarea placeholder='Enter Address' className='w-96 h-20' value="A44A Shankar Vihar Vistar Ganesh Nagar Murlipura Scheme Murlipura jaipur Near Rajwada Bear bar Jaipur 302032 "></textarea>
+                            <div className='border-b-[1px] border-gray-300 mx-8 flex flex-col md:flex-row justify-between pb-5 font-light items-center'>
+                                <label className='w-full md:w-auto text-left'>Address</label>
+                                <textarea placeholder='Enter Address' className='w-full md:w-96 h-20 mt-2 md:mt-0' value="A44A Shankar Vihar Vistar Ganesh Nagar Murlipura Scheme Murlipura jaipur Near Rajwada Bear bar Jaipur 302032 "></textarea>
                             </div>
-                            <button className='py-2 px-6 rounded-xl w-[20%] font-semibold text-white bg-blue-700 hover:bg-gray-300 hover:text-gray-700' a type='submit' disabled={true}>Save</button>
+                            <button className='py-2 px-6 rounded-xl  font-semibold text-white bg-blue-700 hover:bg-gray-300 hover:text-gray-700' type='submit' disabled={true}>Save</button>
                         </form>
                     </div>
                 </div>
 
-                <div className='w-72 mt-10 mr-10'>
-                    <div className='w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+                <div className='w-full lg:w-72 mt-10 lg:mr-10 hidden md:block'>
+                    <div className='w-full max-w-sm mx-auto lg:mx-0 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
                         <a href='#'>
                             <img className='p-8 rounded-t-lg' src='https://flowbite.com/docs/images/products/apple-watch.png' alt='Product' />
                         </a>

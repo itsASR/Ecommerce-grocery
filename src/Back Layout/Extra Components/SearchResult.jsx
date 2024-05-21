@@ -4,6 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { FaCircle } from "react-icons/fa";
 import MainHeader from '../../Main Ecommerce/MainHeader';
 import MegaProductSubCategories from '../../Mega Menu/MegaProductSubCategories';
+import {  FaFilter } from 'react-icons/fa';
+
+
 
 function SearchResult() {
   const { SearchResultdata, setSearchResultdata, categories, SearchResultQuery, setSearchResultQuery } = useContext(Apis);
@@ -30,15 +33,16 @@ function SearchResult() {
 
   return (
     <>
+    <p className='md:hidden fixed bottom-10 right-5 text-xl bg-black p-5 rounded-full z-[100]'><FaFilter color="#ffff" /></p>
       <div className="bg-white">
         <div className='md:h-20'>
-          <MainHeader />
+         <MainHeader></MainHeader>
         </div>
         <div className='w-full h-10 bg-gray-200 flex items-center'>
           <ul className='no-scrollbar flex [&>li]:px-2 sm:[&>li]:px-5 px-4 sm:px-10 text-xs sm:text-sm overflow-x-auto whitespace-nowrap'>
             <li className='relative product-page-categories'><span className='cursor-pointer'>Mens</span>
               <div className='absolute z-10 hidden product-page-subcategories'>
-                <MegaProductSubCategories />
+                <MegaProductSubCategories></MegaProductSubCategories>
               </div>
             </li>
             <li className="cursor-pointer">Women</li>
@@ -53,7 +57,8 @@ function SearchResult() {
         </div>
         <div className='text-center py-10 sm:py-20'>
           <p className='text-2xl sm:text-5xl pb-2'>{name?.toUpperCase()}</p>
-          <p className='text-sm sm:text-base'>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
+          <p className='text-2xl sm:text-5xl pb-2' style={{display: name.length > 1 ? "none" : "block"}}>Products</p>
+          
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 px-4 sm:px-7 gap-y-10 pb-12'>
           {filteredProducts.map((product, index) => (

@@ -1,4 +1,3 @@
-// src/FAQ.js
 import React, { useState } from 'react';
 
 const FAQItem = ({ question, answer, isOpen, toggleItem }) => {
@@ -52,11 +51,15 @@ const FAQ = () => {
 
   return (
     <>
-      <div className='w-screen h-80 overflow-hidden'>
-        <img src='https://www.amsc-usa.com/wp-content/uploads/2023/10/a-packing-line-for-an-ecommerce-warehouse.jpg' className='w-full h-full object-cover'></img>
+      <div className='w-screen h-64 sm:h-80 overflow-hidden'>
+        <img
+          src='https://www.amsc-usa.com/wp-content/uploads/2023/10/a-packing-line-for-an-ecommerce-warehouse.jpg'
+          alt="Ecommerce Warehouse"
+          className='w-full h-full object-cover'
+        />
       </div>
-      <div className="max-w-2xl mx-auto mt-10 bg-white relative p-10 -top-40 rounded-xl">
-        <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+      <div className="max-w-2xl mx-auto mt-10 bg-white relative p-6 sm:p-10 -top-20 sm:-top-40 rounded-xl shadow-lg">
+        <h2 className="text-xl sm:text-2xl font-bold mb-6">Frequently Asked Questions</h2>
         {faqData.map((faq, index) => (
           <FAQItem
             key={index}

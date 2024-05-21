@@ -54,24 +54,21 @@ const MyOrdersPage = () => {
     }
 
     return (
-      <>
-
-        <div className={`shadow-md rounded-md flex items-center p-4 mb-4`}>
-          <img src={order.image} alt={`Order ${order.id}`} className="w-24 h-auto mr-4" />
-          <div className="flex flex-grow justify-between">
-            <div className="flex flex-col">
-              <h2 className="text-lg font-semibold mb-2">Order ID: {order.id}</h2>
-              <p className="text-gray-600 mb-2">Product: {order.productName}</p>
-              <p className={`text-gray-600`}>Status: <span className={`${statusColor} px-2 py-1 rounded`}>{order.status}</span></p>
-            </div>
-            <div className="flex flex-col text-right">
-              <p className="text-gray-600 mb-2">Order Date: {formatDate(order.orderDate)}</p>
-              <p className="text-gray-600 mb-2">Price: ${order.price}</p>
-              <p className="text-gray-600">Estimated Delivery Date: {formatDate(order.estimatedDeliveryDate)}</p>
-            </div>
+      <div className={`shadow-md rounded-md flex flex-col sm:flex-row items-center p-4 mb-4`}>
+        <img src={order.image} alt={`Order ${order.id}`} className=" sm:w-24 h-auto mb-4 sm:mr-4 sm:mb-0" />
+        <div className="flex flex-grow flex-col sm:flex-row justify-between">
+          <div className="flex flex-col mb-2 sm:mb-0">
+            <h2 className="text-lg font-semibold mb-1">Order ID: {order.id}</h2>
+            <p className="text-gray-600 mb-1">Product: {order.productName}</p>
+            <p className={`text-gray-600`}>Status: <span className={`${statusColor} px-2 py-1 rounded`}>{order.status}</span></p>
+          </div>
+          <div className="flex flex-col md:text-right">
+            <p className="text-gray-600 mb-1">Order Date: {formatDate(order.orderDate)}</p>
+            <p className="text-gray-600 mb-1">Price: ${order.price}</p>
+            <p className="text-gray-600">Estimated Delivery Date: {formatDate(order.estimatedDeliveryDate)}</p>
           </div>
         </div>
-      </>
+      </div>
     );
   };
 
@@ -80,19 +77,19 @@ const MyOrdersPage = () => {
       <div className='h-20'>
         <MainHeader></MainHeader>
       </div>
-      <div className="container mx-auto py-8 px-10 ">
-        <div className="mb-4 flex justify-between container px-10 pb-5  items-center">
-          <div className='flex justify-center '>
-            <h1 className="text-2xl font-bold items-center">My Orders</h1>
-            <div className='text-sm flex ml-5 items-center '>
+      <div className="container mx-auto py-8 px-4 sm:px-10 ">
+        <div className="mb-4 flex flex-col pt-10 md:pt-0 sm:flex-row justify-between items-center">
+          <div className='flex flex-col sm:flex-row items-center mb-4 sm:mb-0'>
+            <h1 className="text-2xl font-bold mb-2 sm:mb-0">My Orders</h1>
+            <div className='text-sm flex items-center ml-0 sm:ml-5'>
               <select className='p-2 'style={{outline:"0px"}}>
                 <option>Ecommerce</option>
                 <option>All Orders</option>
               </select>
             </div>
           </div>
-          <div>
-            <label htmlFor="statusFilter" className="mr-2">Filter by status:</label>
+          <div className="flex flex-col sm:flex-row items-center">
+            <label htmlFor="statusFilter" className="mr-2 mb-2 sm:mb-0">Filter by status:</label>
             <select
               id="statusFilter"
               value={filter}

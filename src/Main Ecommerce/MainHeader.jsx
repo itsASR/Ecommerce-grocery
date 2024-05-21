@@ -104,7 +104,7 @@ function MainHeader() {
             <div className={`md:hidden w-screen   z-[500] `} style={{position:SearchResultQuery.length > 0 ? "fixed" : "static" }}>
             <div className="flex justify-between items-center px-4 pt-2">
             <Link to='/'><img src={logo} alt="Company Logo" className="h-8" /></Link>
-                <MdAccountCircle className="text-5xl text-gray-700" />
+                <Link to='/usermobile'><MdAccountCircle className="text-5xl text-gray-700" /></Link>
             </div>
             <div className="mt-4 flex justify-center pb-2">
                 <input

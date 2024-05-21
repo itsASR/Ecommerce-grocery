@@ -1,133 +1,113 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
-import logo from '/logo.svg'
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { BsArrowLeft } from "react-icons/bs";
-
-
-
-
-
+import logo from '/logo.svg'
+import MainHeader from '../Main Ecommerce/MainHeader';
 
 function Login() {
     const navigate = useNavigate();
-    const [mobile, setmobile] = useState("")
-    const [password, setpassword] = useState("")
-
-
-
+    const [mobile, setMobile] = useState("");
+    const [password, setPassword] = useState("");
 
     function loginformsubmit(e) {
-        e.preventDefault()
-        console.log("login details taking ");
-        console.log(mobile, password);
+        e.preventDefault();
         axios.post('http://192.168.1.19:4899/user/login', { mobile, password })
             .then((res) => {
-                if (res.data.message === "Login Successfully")
-                    alert("Login Successfully")
-                navigate("/");
-
+                if (res.data.message === "Login Successfully") {
+                    alert("Login Successfully");
+                    navigate("/");
+                }
             })
             .catch((err) => {
                 alert(err.response.data.message);
-
-            })
-
+            });
     }
-
-
-
-
-
-
 
     return (
         <>
+        <MainHeader></MainHeader>
+        <div className="flex  flex-col justify-center px-6 py-8 sm:px-8 lg:px-12 bg-gray-100 md:pt-28">
+            <div className="sm:mx-auto sm:w-full sm:max-w-md ">
+                <img
+                    className="mx-auto h-12 w-auto"
+                    src={logo}
+                    alt="Your Company"
+                />
+                <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+                    Sign in to your account
+                </h2>
+            </div>
 
-
-            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-1 lg:px-8">
-                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                    {/* <img
-                        className="mx-auto h-10 w-auto"
-                        src={logo}
-                        alt="Your Company"
-                    /> */}
-                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                        Sign in to your account
-                    </h2>
-                </div>
-
-                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form className="space-y-6" onSubmit={(e) => loginformsubmit(e)} method="POST">
-                        <div>
-                            <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
-                                Mobile Number
-                            </label>
-                            <div className="mt-2">
-                                <input
-                                    onChange={(e) => setmobile(e.target.value)}
-                                    id="mobile"
-                                    name="mobile"
-                                    type="number"
-
-                                    required
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                />
-                            </div>
+            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+                <form className="space-y-6 bg-white p-8 rounded-lg shadow-md" onSubmit={loginformsubmit} method="POST">
+                    <div>
+                        <label htmlFor="mobile" className="block text-sm font-medium text-gray-700">
+                            Mobile Number
+                        </label>
+                        <div className="mt-1">
+                            <input
+                                onChange={(e) => setMobile(e.target.value)}
+                                id="mobile"
+                                name="mobile"
+                                type="number"
+                                required
+                                className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            />
                         </div>
-
-                        <div>
-                            <div className="flex items-center justify-between">
-                                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Password
-                                </label>
-                                <div className="text-sm">
-                                    <Link to='/password'><p className="font-semibold text-indigo-600 hover:text-indigo-500">
-                                        Forgot password?
-                                    </p></Link>
-                                </div>
-                            </div>
-                            <div className="mt-2">
-                                <input
-                                    onChange={(e) => setpassword(e.target.value)}
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    autoComplete="current-password"
-                                    required
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <button
-                                type="submit"
-                                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            >
-                                Sign in
-                            </button>
-                        </div>
-                    </form>
-
-                    <div className='flex justify-between'>
-                        <p className="mt-10 text-center text-sm text-gray-500">
-                            Not a member?{' '}
-                            <Link to='/register' className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                                Register
-                            </Link>
-                        </p>
-                        <p className="mt-10 text-center text-sm text-gray-500">
-                            Back to Home{' '}
-                            <Link to='/' className="font-semibold leading-6 text-green-600 hover:text-green-500">
-                                Home
-                            </Link>
-                        </p>
                     </div>
+
+                    <div>
+                        <div className="flex items-center justify-between">
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                                Password
+                            </label>
+                            <div className="text-sm">
+                                <Link to='/password' className="font-medium text-indigo-600 hover:text-indigo-500">
+                                    Forgot password?
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="mt-1">
+                            <input
+                                onChange={(e) => setPassword(e.target.value)}
+                                id="password"
+                                name="password"
+                                type="password"
+                                autoComplete="current-password"
+                                required
+                                className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <button
+                            type="submit"
+                            className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+
+                <div className="mt-6 flex justify-between text-sm text-gray-500">
+                    <p>
+                        Not a member?{' '}
+                        <Link to='/register' className="font-medium text-indigo-600 hover:text-indigo-500">
+                            Register
+                        </Link>
+                    </p>
+                    <p>
+                        <Link to='/' className="font-medium text-green-600 hover:text-green-500">
+                            Back to Home
+                        </Link>
+                    </p>
                 </div>
             </div>
+        </div>
+        
         </>
-    )
-
+    );
 }
-export default Login
+
+export default Login;

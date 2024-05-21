@@ -12,6 +12,7 @@
   
 }
 
+
 .categories-main:hover .categories-sub {
   display: block;
 }
@@ -159,3 +160,4 @@
     "wdth" 100,
     "GRAD" 0;
 }
+

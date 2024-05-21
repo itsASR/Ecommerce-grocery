@@ -23,6 +23,7 @@ import Orders from './Orders';
 import Support from './Support';
 import FAQ from './FAQ';
 import ComplaintForm from './ComplaintForm';
+import UserMobileUI from './MobileUI/UserMobileUI';
 
 
 export const Apis = createContext()
@@ -77,7 +78,7 @@ function App() {
             <Route path='/complaint' element={<ComplaintForm></ComplaintForm>}></Route>
             
             
-            
+            <Route path='/usermobile' element={<UserMobileUI></UserMobileUI>}></Route>
             <Route path='/ecommerceproducts' element={<EcommerceProductpage></EcommerceProductpage>}></Route>
             
             
