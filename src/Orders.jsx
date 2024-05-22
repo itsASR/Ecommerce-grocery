@@ -6,9 +6,9 @@ const MyOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [filteredOrders, setFilteredOrders] = useState([]);
   const [filter, setFilter] = useState('All');
-
+ 
   useEffect(() => {
-    axios.get('public/Ecommerce API/Orders.json')
+    axios.get('/Ecommerce API/Orders.json')
       .then(response => {
         setOrders(response.data);
         setFilteredOrders(response.data);
