@@ -1,22 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import MainHeader from './Main Ecommerce/MainHeader';
+import allApis from './APIs/Apis';
+import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
+import { Apis } from './App';
 
 const MyOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [filteredOrders, setFilteredOrders] = useState([]);
   const [filter, setFilter] = useState('All');
+  const [getOrders ,setGetOrders] = useState([])
+  const {mail} = useContext(Apis)
+
+
+  const callOrder = async () => {
+    try {
+      const response = await axios.post(allApis.get_orders , {email: mail})
+      console.log("orders", response.data.data);
+      setOrders(response.data.data);
+      setFilteredOrders(response.data.data);
+    } catch (error) {
+      console.log("get order error", error)
+    }}
  
-  useEffect(() => {
-    axios.get('/Ecommerce API/Orders.json')
-      .then(response => {
-        setOrders(response.data);
-        setFilteredOrders(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching orders:', error);
-      });
-  }, []);
+ useEffect(()=>{
+  callOrder();
+ }, [])
 
   useEffect(() => {
     if (filter === 'All') {
@@ -55,17 +65,20 @@ const MyOrdersPage = () => {
 
     return (
       <div className={`shadow-md rounded-md flex flex-col sm:flex-row items-center p-4 mb-4`}>
-        <img src={order.image} alt={`Order ${order.id}`} className=" sm:w-24 h-auto mb-4 sm:mr-4 sm:mb-0" />
+        <img src={allApis.baseurl + (order.colorDetails[0]?.image_url[0]?.url || "")} alt={`Order ${order.id}`} className=" sm:w-24 h-auto mb-4 sm:mr-4 sm:mb-0" />
         <div className="flex flex-grow flex-col sm:flex-row justify-between">
           <div className="flex flex-col mb-2 sm:mb-0">
             <h2 className="text-lg font-semibold mb-1">Order ID: {order.id}</h2>
-            <p className="text-gray-600 mb-1">Product: {order.productName}</p>
+            <p className="text-gray-600 mb-1">Product: {order.name}</p>
+            <p className={`text-gray-600 pb-1`}>Payment Type: <span className={` px-2 py-1 rounded`}>{order.payment_type}</span></p>
             <p className={`text-gray-600`}>Status: <span className={`${statusColor} px-2 py-1 rounded`}>{order.status}</span></p>
           </div>
-          <div className="flex flex-col md:text-right">
-            <p className="text-gray-600 mb-1">Order Date: {formatDate(order.orderDate)}</p>
+          <div className="flex flex-col md:text-right items-end">
+            <p className="text-gray-600 mb-1">Order Date: {formatDate(order.date)}</p>
             <p className="text-gray-600 mb-1">Price: ${order.price}</p>
-            <p className="text-gray-600">Estimated Delivery Date: {formatDate(order.estimatedDeliveryDate)}</p>
+            <p className="text-gray-600">Estimated Delivery Date: {formatDate(order.delivery_date)}</p>
+            <Link to="/support"><button className="text-gray-600 px-2 py-2 bg-green-600 rounded-xl text-white w-40 flex items-center justify-evenly text-sm mt-2 hover:scale-110 hover:bg-green-700">Get Support <FaArrowRightLong /></button></Link>
+
           </div>
         </div>
       </div>

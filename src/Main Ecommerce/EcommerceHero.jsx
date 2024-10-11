@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import allApis from "../APIs/Apis";
+import axios from "axios";
+// import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+
 
 
 function SampleNextArrow(props) {
@@ -56,26 +62,45 @@ var settings = {
 
 
 function EcommerceHero() {
+  const [bannerDetails, setBannerDetails] = useState([]);
+  const [isLoading , setIsLoading] = useState(true)
 
+  const gettingBannerDetails = async () => {
+    try {
+      const result = await axios.post(allApis.banner, { banner: "TOP-Banner" })
+      // console.log(result)
+      setBannerDetails(result.data.data)
+      setIsLoading(false);
+    } catch (error) {
+      console.log("error in getting banner", error)
+    }
+  }
 
+  useEffect(() => {
+    gettingBannerDetails();
+  }, [])
 
   return (
     <>
 
       <Slider {...settings} className="">
-        <div className="flex justify-center  w-screen  md:h-screen h-40 ">
-          <img src="https://media.darveys.com/vss_mobileappbuilder/k/b/kbmobileapp_tc__1714741271.jpg" className="object-cover w-full h-full"></img>
-        </div>
+        {
+          bannerDetails && bannerDetails.map((banner , index) => (
+            <div key={index} className="flex justify-center  w-screen  md:h-screen h-40 ">
+              <img src={allApis.baseurl + banner.image_url}
+                className="object-cover w-full h-full"></img>
+            </div>
 
-        <div className="flex justify-center  w-screen  md:h-screen h-40  ">
-          <img src="https://cdn.shopaccino.com/qarot/slideshows/untitled-2-680217_l.jpg?v=513" className="object-cover w-full h-full"></img>
-        
-        </div>
-
-        <div className="flex justify-center  w-screen  md:h-screen h-40  ">
-          <img src='https://media.darveys.com/vss_mobileappbuilder/k/b/kbmobileapp_tc__1714633375.jpg' className='object-cover w-full h-full'></img>
-        </div>
+          ))
+        }
       </Slider>
+
+
+
+      <div style={{display:isLoading?"block":"none"}}>
+        <Skeleton height={550} baseColor="#F6EDFF"  highlightColor="#444" />
+      </div>
+
 
 
     </>

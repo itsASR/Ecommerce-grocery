@@ -1,15 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Apis } from '../App';
-import { Link, useNavigate } from 'react-router-dom';
 import allApis from '../APIs/Apis';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Apis } from '../App';
+import MainHeader from '../Main Ecommerce/MainHeader';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-function BestSeller() {
-    const { productDetails, setReloaddata, setAdvertise , mail} = useContext(Apis);
+function FilteredProducts() {
+    const { productDetails, setReloaddata, setAdvertise , mail } = useContext(Apis);
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const name = searchParams.get('name');
     const navigate = useNavigate();
     const [showSizeDiv, setShowSizeDiv] = useState(false)
     const [sizeChart, setSizeChart] = useState([])
@@ -20,36 +24,36 @@ function BestSeller() {
     const [outOfStock, setOutOfStock] = useState(false);
   
 
-    function callingcatfilter(name) {
-        navigate("/filtered?name=" + name)
-    }
-
-   
-
-    console.log("productDetails bestseller", productDetails)
-
     useEffect(() => {
         const filterTopSellingProducts = () => {
             let arr = [];
             productDetails.forEach((product) => {
                 product.colorDetails.forEach((colorDetail) => {
-                    if (colorDetail.promoted === "true") {
+                    if (colorDetail[name] === "true") {
                         arr.push(colorDetail);
                     }
                 });
             });
             setFilteredProducts(arr);
-            setAdvertise(arr);
         };
 
         filterTopSellingProducts();
     }, [productDetails]);
 
+
+
+    // function callingcatfilter(name) {
+    //     navigate("/filtered?name=" + name)
+    // }
+
+    // console.log("productDetails", productDetails)
+
+    
     function closingDiv() {
         setShowSizeDiv(false);
         setSelectedSize(null);
         setWarning("");
-    }
+    }    
 
     const addCartFunc1 = async () => {
         try {
@@ -133,9 +137,16 @@ function BestSeller() {
         checkingItem()
     }, [selectedSize])
 
+
     return (
         <>
-            <div className='w-screen h-screen bg-[#000000cf] fixed z-[505] top-0' style={{ display: showSizeDiv ? 'flex' : 'none' }}>
+            <div className='md:h-20'>
+                {/* Main Header component */}
+                <MainHeader />
+            </div>
+
+
+           <div className='w-screen h-screen bg-[#000000cf] fixed z-[505] top-0' style={{ display: showSizeDiv ? 'flex' : 'none' }}>
                 <div className="p-4 w-80 mx-auto bg-white  shadow-md space-y-4 fixed top-0 z-50 right-0  h-screen text-center flex-col items-center  z-[50000] overflow-scroll no-scrollbar" >
                     <button className='fixed right-5 bg-gray-200 px-2 py-1 rounded-full hover:scale-125' onClick={() => { closingDiv() }}>X</button>
                     <div className="text-3xl font-medium text-black mb-4  pb-5 pt-5 ">Select Preference:</div>
@@ -179,9 +190,8 @@ function BestSeller() {
             </div>
 
 
-
             <div className='text-center md:py-20 py-10'>
-                <p className='md:text-5xl pb-2 pl-5 md:pl-0'>Latest Arrival</p>
+                <p className='md:text-5xl pb-2 pl-5 md:pl-0'>{name === "promoted" ? "Latest Arrival" : "Best Seller"}</p>
                 <div className='border-b mx-16 border-black md:hidden'></div>
                 <p className='hidden md:block'>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
             </div>
@@ -218,10 +228,10 @@ function BestSeller() {
                                 </div>
 
                                 {/* <button className="flex items-center rounded-md bg-slate-900 px-2 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300" onClick={() => addCartFunc(product)}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
-                                    Add to cart </button> */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Add to cart </button> */}
                                 <button
                                     type="button"
                                     className="px-2 py-2.5 bg-slate-900 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform mx-5 flex" onClick={() => addCartFunc(product)}
@@ -230,7 +240,7 @@ function BestSeller() {
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
 
-                                    <span className="ml-2">Add to cart</span>
+                                    <span class="ml-2">Add to cart</span>
                                 </button>
 
                             </div>
@@ -245,11 +255,6 @@ function BestSeller() {
                     </div>
 
                 ))}
-            </div>
-            <div className='text-center'>
-                <button value="promoted" className='hidden md:block text-center mx-auto border-2 w-40 py-2 border-black hover:text-red-300 hover:border-red-300' onClick={(e) => callingcatfilter(e.target.value)}>
-                    Load More
-                </button>
             </div>
             <ToastContainer
                 position="top-center"
@@ -267,4 +272,4 @@ function BestSeller() {
     );
 }
 
-export default BestSeller;
+export default FilteredProducts;

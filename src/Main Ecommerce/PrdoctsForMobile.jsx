@@ -1,16 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Apis } from '../App';
+import allApis from '../APIs/Apis';
 
 function ProductsForMobile() {
-    const { categories } = useContext(Apis);
+    const { productDetails } = useContext(Apis);
     const [products, setProducts] = useState([]);
+    
+    // productDetails
 
-    useEffect(() => {
-        const allProducts = categories.flatMap(category => category.products);
-        setProducts(allProducts);
-    }, [categories]);
+    // useEffect(() => {
+    //     const allProducts = productDetails.flatMap(category => category);
+    //     setProducts(allProducts);
+    // }, [categories]);
 
-    console.log("filteredProducts", products);
+    // console.log("filteredProducts", products);
 
     return (
         <>
@@ -21,10 +24,10 @@ function ProductsForMobile() {
                 
             </div>
             <div className='grid overflow-hidden grid-cols-2 sm:grid-cols-3  md:grid-cols-3 lg:grid-cols-4  gap-4 pb-12'>
-                {products.map(product => (
+                {productDetails.map(product => (
                     <div key={product.id} className="product-div mx-auto">
                         <div className="card md:h-[350px] h-40 w-40 md:w-full relative overflow-hidden rounded-lg">
-                            <img src={product.image_url} className='h-full w-full rounded-lg bg-red-200 relative z-20 hover:z-0 object-cover' alt={product.title} />
+                            {/* <img src={baseurl + product.image_url[0].url} className='h-full w-full rounded-lg bg-red-200 relative z-20 hover:z-0 object-cover' alt={product.title} /> */}
                             <img src='https://img101.urbanic.com/v1/goods-pic/18a5a20039a64497ac6afb176e7c6b70UR_w1440_q90.webp' className='h-full w-full rounded-lg bg-red-200 absolute top-0 z-10 hover:z-30 object-cover' alt={product.title} />
                             {product.discount_price && (
                                 <div className="font-semibold">

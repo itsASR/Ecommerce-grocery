@@ -1,39 +1,57 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { IoClose } from "react-icons/io5";
 import { Apis } from '../App';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import allApis from '../APIs/Apis';
 
 function SearchPromotion() {
     const { setSearchBox, SearchResultQuery, SearchResultdata } = useContext(Apis);
+    const [searchvisibility, setSearchvisibility] = useState(false)
+    const { pathname, search } = useLocation();
+
+    useEffect(() => {
+        if (SearchResultQuery.length > 0) {
+            setSearchvisibility(true)
+        } else {
+            setSearchvisibility(false)
+        }
+    }, [SearchResultQuery])
+
+    useEffect(() => {
+        setSearchvisibility(false)
+    }, [pathname, search])
+    
+
+
 
     return (
         <>
-            <div className='py-20 bg-white w-screen' style={{ display: SearchResultQuery.length > 0 ? "block" : "none" }}>
+            <div className='py-20 bg-white w-screen' style={{ display: searchvisibility ? "block" : "none" }}>
                 <div className='absolute w-screen mx-auto flex justify-center' style={{ display: SearchResultQuery.length > 1 ? "flex" : "none" }}>
                     <div className="w-full max-w-md p-4 bg-white pt-20 border border-gray-200 rounded-lg shadow sm:p-8 ">
                         <div className="flex items-center justify-between mb-4">
                             <h5 className="text-xl font-bold leading-none text-gray-900  ">{SearchResultQuery}</h5>
-                            <Link to={`/search?name=${SearchResultQuery}`}><span className="text-sm font-medium text-blue-600 hover:underline ">
+                            <Link to={{ pathname: "/search", search: `?name=${SearchResultQuery}` }}><span className="text-sm font-medium text-blue-600 hover:underline ">
                                 View all
                             </span></Link>
                         </div>
                         <div className="flow-root">
                             <ul role="list" className="divide-y divide-gray-200 ">
-                                {SearchResultdata.map((products) => (
-                                    <li key={products.id} className="py-3 sm:py-4">
+                                {SearchResultdata.map((products, index) => (
+                                    <Link key={index} to={`/product?id=${products.id}`}><li key={products.id} className="py-3 sm:py-4">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0">
-                                                <img className="w-8 h-8 rounded-full" src={products.image_url} alt="Neil image" />
+                                                <img className="w-8 h-8 rounded-full object-cover" src={allApis.baseurl + products.colorDetails[0].image_url[0].url} alt="image" />
                                             </div>
                                             <div className="flex-1 min-w-0 ms-4">
                                                 <p className="text-sm font-medium text-gray-900 truncate ">
-                                                    {products.title}
+                                                    {products.name}
                                                 </p>
 
                                             </div>
 
                                         </div>
-                                    </li>
+                                    </li></Link>
                                 ))}
                             </ul>
                         </div>

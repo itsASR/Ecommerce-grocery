@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import allApis from "../APIs/Apis";
 
 const OTPVerification = () => {
     const navigate = useNavigate();
@@ -49,7 +50,7 @@ const OTPVerification = () => {
         e.preventDefault();
         console.log("my email", setemail)
         setShowOTPField(true);
-        axios.post('http://192.168.1.19:4899/user/get-otp', { email })
+        axios.post(allApis.get_otp, { email })
             .then((response) => {
                 console.log("my response from server", response)
             })
@@ -60,7 +61,7 @@ const OTPVerification = () => {
         e.preventDefault();
         let otp = inputs.join("")
         console.log("my otp is", otp)
-        axios.post('http://192.168.1.19:4899/user/verify-otp', { email, otp })
+        axios.post(allApis.verify_otp, { email, otp })
             .then((response) => {
                 if (response.data.msg === "OTP Verifyed") {
                     alert("OTP Verifyed")
